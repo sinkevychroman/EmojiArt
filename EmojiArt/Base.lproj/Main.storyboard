@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lsa-nX-dYw">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Emoji Art View Controller-->
+        <scene sceneID="pRo-vX-Ace">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Lsa-nX-dYw" customClass="EmojiArtViewController" customModule="EmojiArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wB2-5P-KkU">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hie-dR-QLY">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-0b-kFM" customClass="EmojiArtView" customModule="EmojiArt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fS5-0b-kFM" secondAttribute="bottom" id="5na-6k-iC9"/>
+                                    <constraint firstAttribute="trailing" secondItem="fS5-0b-kFM" secondAttribute="trailing" id="BMK-7A-gqR"/>
+                                    <constraint firstItem="fS5-0b-kFM" firstAttribute="leading" secondItem="hie-dR-QLY" secondAttribute="leading" id="CSg-va-LEt"/>
+                                    <constraint firstItem="fS5-0b-kFM" firstAttribute="top" secondItem="hie-dR-QLY" secondAttribute="top" id="uaR-I7-7uV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dBA-uQ-SRd" firstAttribute="trailing" secondItem="hie-dR-QLY" secondAttribute="trailing" id="33l-2r-PXm"/>
+                            <constraint firstItem="hie-dR-QLY" firstAttribute="leading" secondItem="dBA-uQ-SRd" secondAttribute="leading" id="Fbk-WE-cgm"/>
+                            <constraint firstItem="dBA-uQ-SRd" firstAttribute="bottom" secondItem="hie-dR-QLY" secondAttribute="bottom" id="Xq2-Sq-l6M"/>
+                            <constraint firstItem="hie-dR-QLY" firstAttribute="top" secondItem="dBA-uQ-SRd" secondAttribute="top" id="rH5-Me-78k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dBA-uQ-SRd"/>
                     </view>
+                    <connections>
+                        <outlet property="dropZone" destination="hie-dR-QLY" id="SUa-WJ-n0d"/>
+                        <outlet property="emojiArtView" destination="fS5-0b-kFM" id="gRg-uB-dDo"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0l-wH-2gw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="143" y="72"/>
         </scene>
     </scenes>
 </document>
